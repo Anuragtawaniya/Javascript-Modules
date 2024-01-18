@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .box {
+        background: blue;
+        width: 30%;
+        height: 50px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+        background: #000;
+        padding: 10px;
+        margin: 10px;
+        text-decoration: none;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Tabs</h1>
+    <div style="display: flex">
+      <a href="#" onclick="tabs('all')">All</a>
+      <a href="#" onclick="tabs('animal')">Animal</a>
+      <a href="#" onclick="tabs('news')">News</a>
+      <a href="#" onclick="tabs('tech')">Tech</a>
+      <a href="#" onclick="tabs('hubspot')">Hubspot</a>
+    </div>
+    <div class="container">
+      <div class="box animal">Animal</div>
+      <div class="box news">News</div>
+      <div class="box tech">tech</div>
+      <div class="box hubspot">hubspot</div>
+    </div>
+
+    <script>
+      function tabs(tab) {
+        let content = document.querySelector(".tech");
+        let box = document.querySelectorAll(".box");
+        console.log(content);
+
+        box.forEach((element) => {
+          if (element.classList.contains(tab)) {
+            element.style.display = "block";
+            console.log("true");
+          } else {
+            element.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
